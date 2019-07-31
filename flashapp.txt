@@ -1,0 +1,22 @@
+
+//filename : app.js
+
+
+var flash = require("connect-flash");
+
+
+
+app.use(flash());
+
+
+
+    app.use(function (req, res, next) {
+      res.locals.success_msg = req.flash('success_msg');
+      res.locals.error_msg = req.flash('error_msg');
+      res.locals.error = req.flash('error');
+      res.locals.success=req.flash('success');
+      res.locals.successrem=req.flash('successrem');
+      res.locals.successpass=req.flash('successpass');
+      res.locals.generationsuccess_msg=req.flash('generationsuccess_msg');
+      next();
+    });

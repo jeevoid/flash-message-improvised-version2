@@ -1,0 +1,34 @@
+
+
+//add this flash code into your ejs file 
+
+
+
+<html>
+
+
+
+           <!-- flash message -->
+                    <% if(locals.message){ %>
+                        <div class="text text-center" role="alert"
+                        background-color: red;>
+                        <strong style="color:green"><%= message.success_msg %></strong>
+                        </div>
+                    <% } %>
+
+</html>
+
+
+
+///to display using router after routing  (js file)
+
+
+     req.flash('success_msg', 'Record Deleted successfully');
+         res.locals.message=req.flash();
+
+
+
+
+
+
+
